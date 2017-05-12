@@ -4,7 +4,8 @@ import json
 from bs4 import BeautifulSoup
 import lxml
 
-p=[]
+content=[]
+c2=[]
 '''res = requests.get('https://hackmd.io/s/HkbDAi51Z')
 soup = BeautifulSoup(res.text, "lxml")
 
@@ -19,8 +20,14 @@ for i in range(3):
 
 for d in data:
     d = d.split("\n\n")
-    p.append(d)
-print(p)
+    content.append(d)
+
+for x in range(len(content)):
+    for y in range(len(content[x])):
+        if content[x] != content[0]:
+            c2[x].append(content[x][y])
+
+print(c2)
 # content = [{"title": x} for x in content ]
 
 
